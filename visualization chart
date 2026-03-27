@@ -1,0 +1,21 @@
+import matplotlib.pyplot as plt
+
+# Protein impact calculation
+not_affected = silent_count
+affected = missense_count + nonsense_count
+
+labels = ["Protein Not Affected", "Protein Affected"]
+sizes = [not_affected, affected]
+
+# pie chart
+plt.figure(figsize=(5,5))
+plt.pie(
+    sizes,
+    labels=labels,
+    autopct='%1.1f%%',   
+    startangle=90
+)
+
+plt.title("Effect of DNA Mutations on Protein")
+plt.axis('equal')  
+plt.show()
